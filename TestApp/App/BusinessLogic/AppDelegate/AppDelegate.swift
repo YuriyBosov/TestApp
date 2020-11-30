@@ -25,6 +25,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         appCoordinator?.start()
         
+//        // test request
+//        Network.request(path: Network.Path.topPost, parameters: ["limit":3])
+        
         return true
     }
 
