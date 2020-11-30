@@ -11,7 +11,7 @@ class StartCoordinator: BaseCoordinator {
     
     override func start(with option: [String : AnyObject]? = nil) {
         let viewModel = StartViewModel()
-        viewModel.onFetchComplition = {[weak self] _ in
+        viewModel.onFetchCompletion = {[weak self] _ in
             self?.onFinishFlow?(self)
         }
         

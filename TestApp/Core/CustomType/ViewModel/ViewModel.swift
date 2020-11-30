@@ -23,7 +23,7 @@ class ViewModel: NSObject, ViewModelAbstract {
     var onLoadEnd: Constant.Block.loadEnd?
     
     // used for successful data received
-    var onFetchComplition: Constant.Block.loadComplition?
+    var onFetchCompletion: Constant.Block.loadCompletion?
     
     // start fetch data request
     func fetchData() {

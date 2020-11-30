@@ -12,12 +12,12 @@ enum Constant {
         typealias json = ([String : Any]) -> Void
         typealias data = (Data) -> Void
         typealias error = (ErrorHandler) -> Void
-        typealias complition = () -> Void
+        typealias completion = () -> Void
         typealias result = (Bool) -> Void
         
         typealias loadStart = () -> Void
         typealias loadEnd = (ErrorHandler?) -> Void
-        typealias loadComplition = (Any) -> Void
+        typealias loadCompletion = (Any) -> Void
     }
     
     enum Color {

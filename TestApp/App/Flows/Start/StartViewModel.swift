@@ -13,7 +13,7 @@ class StartViewModel: ViewModel {
         onLoadStart?()
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             self.onLoadEnd?(nil)
-            self.onFetchComplition?(true)
+            self.onFetchCompletion?(true)
         }
     }
 }

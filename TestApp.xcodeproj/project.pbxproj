@@ -26,6 +26,8 @@
 		E755F55C2575797F00D8A03F /* RestorePassViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E755F55B2575797F00D8A03F /* RestorePassViewModel.swift */; };
 		E755F55F2575798E00D8A03F /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E755F55E2575798E00D8A03F /* RegistrationViewModel.swift */; };
 		E755F5642575799B00D8A03F /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E755F5632575799B00D8A03F /* LoginViewModel.swift */; };
+		E755F56E257593FF00D8A03F /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E755F56D257593FF00D8A03F /* ImageLoader.swift */; };
+		E755F5722575941F00D8A03F /* UIImageView+ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E755F5712575941F00D8A03F /* UIImageView+ImageLoader.swift */; };
 		E7D0C60A2575055C00D5F2B6 /* UIStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D0C6092575055C00D5F2B6 /* UIStoryboard.swift */; };
 		E7D0C60D2575090B00D5F2B6 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D0C60C2575090B00D5F2B6 /* UIViewController.swift */; };
 		E7D0C61025750D7E00D5F2B6 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7D0C60F25750D7E00D5F2B6 /* Auth.storyboard */; };
@@ -80,6 +82,8 @@
 		E755F55B2575797F00D8A03F /* RestorePassViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestorePassViewModel.swift; sourceTree = "<group>"; };
 		E755F55E2575798E00D8A03F /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		E755F5632575799B00D8A03F /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		E755F56D257593FF00D8A03F /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		E755F5712575941F00D8A03F /* UIImageView+ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+ImageLoader.swift"; sourceTree = "<group>"; };
 		E7D0C6092575055C00D5F2B6 /* UIStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryboard.swift; sourceTree = "<group>"; };
 		E7D0C60C2575090B00D5F2B6 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		E7D0C60F25750D7E00D5F2B6 /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
@@ -195,6 +199,22 @@
 			path = PostDetailed;
 			sourceTree = "<group>";
 		};
+		E755F56C257593EA00D8A03F /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		E755F5702575940500D8A03F /* ImageLoader */ = {
+			isa = PBXGroup;
+			children = (
+				E755F56D257593FF00D8A03F /* ImageLoader.swift */,
+				E755F5712575941F00D8A03F /* UIImageView+ImageLoader.swift */,
+			);
+			path = ImageLoader;
+			sourceTree = "<group>";
+		};
 		E7D0C607257503C200D5F2B6 /* Start */ = {
 			isa = PBXGroup;
 			children = (
@@ -276,6 +296,7 @@
 		E7F691952572757700821B6D /* BusinessLogic */ = {
 			isa = PBXGroup;
 			children = (
+				E755F56C257593EA00D8A03F /* Network */,
 				E7F691B82572764500821B6D /* AppDelegate */,
 				E7F691E3257295E100821B6D /* Session */,
 			);
@@ -406,6 +427,7 @@
 		E7F691D62572888500821B6D /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				E755F5702575940500D8A03F /* ImageLoader */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -499,6 +521,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E755F5642575799B00D8A03F /* LoginViewModel.swift in Sources */,
+				E755F56E257593FF00D8A03F /* ImageLoader.swift in Sources */,
 				E7D0C64725753F6500D5F2B6 /* HUDView.swift in Sources */,
 				E755F52425756E1D00D8A03F /* SettingViewModel.swift in Sources */,
 				E755F54625756EAB00D8A03F /* PostCoordinator.swift in Sources */,
@@ -538,6 +561,7 @@
 				E7F691D125727B3800821B6D /* Post.swift in Sources */,
 				E755F54B25756EE400D8A03F /* PostListViewModel.swift in Sources */,
 				E7D0C61825750EC800D5F2B6 /* StartViewModel.swift in Sources */,
+				E755F5722575941F00D8A03F /* UIImageView+ImageLoader.swift in Sources */,
 				E7D0C6392575264100D5F2B6 /* ViewModelAbstract.swift in Sources */,
 				E7F691802572745300821B6D /* AppDelegate.swift in Sources */,
 				E7D0C62B25750F7900D5F2B6 /* MainTabBarController.swift in Sources */,

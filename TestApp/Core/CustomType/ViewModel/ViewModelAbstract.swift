@@ -10,7 +10,7 @@ import Foundation
 protocol ViewModelAbstract {
     var onLoadStart: Constant.Block.loadStart? { get set }
     var onLoadEnd: Constant.Block.loadEnd? { get set }
-    var onFetchComplition: Constant.Block.loadComplition? { get set }
+    var onFetchCompletion: Constant.Block.loadCompletion? { get set }
     
     var task: URLSessionTask? { get set }
     
