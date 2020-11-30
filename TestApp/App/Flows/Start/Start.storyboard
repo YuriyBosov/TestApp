@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="msB-T6-xR8">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Start View Controller-->
+        <scene sceneID="TIl-74-LAq">
+            <objects>
+                <viewController storyboardIdentifier="StartViewController" id="LVn-Mk-C8t" customClass="StartViewController" customModule="TestApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iKJ-6b-3Nv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="redditLogo" translatesAutoresizingMaskIntoConstraints="NO" id="WKk-dF-pjC">
+                                <rect key="frame" x="132" y="373" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="WKk-dF-pjC" secondAttribute="height" multiplier="1:1" id="PMO-7n-lAd"/>
+                                    <constraint firstAttribute="width" constant="150" id="asH-1X-6vQ"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="52y-bS-Bm1"/>
+                        <color key="backgroundColor" red="0.92156862750000001" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="WKk-dF-pjC" firstAttribute="centerX" secondItem="iKJ-6b-3Nv" secondAttribute="centerX" id="2zl-zW-YKf"/>
+                            <constraint firstItem="WKk-dF-pjC" firstAttribute="centerY" secondItem="iKJ-6b-3Nv" secondAttribute="centerY" id="Nmt-oh-pnY"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="9HY-ry-NZf"/>
+                    <connections>
+                        <outlet property="logoCenterYConstraint" destination="Nmt-oh-pnY" id="N2i-5R-9sF"/>
+                        <outlet property="logoWidhtConstraint" destination="asH-1X-6vQ" id="bcP-vy-d8q"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rKx-LO-vuv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="940.57971014492762" y="61.607142857142854"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="lvW-Jx-Bqz">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="msB-T6-xR8" customClass="NavigationController" customModule="TestApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="q8m-T6-QWv">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="LVn-Mk-C8t" kind="relationship" relationship="rootViewController" id="Lrl-6D-vZP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vSN-pf-qrE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="30.434782608695656" y="61.607142857142854"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="redditLogo" width="480" height="480"/>
+    </resources>
+</document>

@@ -10,10 +10,21 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    var window: UIWindow?
+    lazy var window: UIWindow? = UIWindow(frame: UIScreen.main.bounds)
+    
+    var appCoordinator: AppCoordinator?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        let session = Session.current
+        let router = Router(rootController: NavigationController())
+        appCoordinator = AppCoordinator(session: session, router: router)
+        
+        window?.rootViewController = appCoordinator?.router.toPresent()
+        window?.makeKeyAndVisible()
+        
+        appCoordinator?.start()
+        
         return true
     }
 

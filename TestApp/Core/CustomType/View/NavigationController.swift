@@ -15,6 +15,11 @@ class NavigationController: UINavigationController {
         #endif
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.view.backgroundColor = .systemYellow
+    }
+    
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return topViewController?.supportedInterfaceOrientations ?? .all
     }
