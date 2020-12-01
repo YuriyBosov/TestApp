@@ -13,6 +13,8 @@ extension UIImageView {
         ImageLoader.shared.downloadImage(urlString: urlString) { (image, error) in
             if let image = image {
                 self.image = image
+            } else {
+                print("⚠️⚠️⚠️ failed load image from \(urlString)")
             }
             completion?(image, error)
         }

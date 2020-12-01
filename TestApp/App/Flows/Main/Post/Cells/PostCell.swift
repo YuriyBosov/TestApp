@@ -23,8 +23,16 @@ class PostCell: UITableViewCell {
         onPlayButtonTapped?()
     }
     
-    @IBAction private func thumbnailTapped() {
+    @objc private func thumbnailTapped() {
         onThumbnailTapped?()
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        thumbnail?.isUserInteractionEnabled = true
+        let tap = UITapGestureRecognizer(target: self, action: #selector(thumbnailTapped))
+        thumbnail?.addGestureRecognizer(tap)
     }
     
 }

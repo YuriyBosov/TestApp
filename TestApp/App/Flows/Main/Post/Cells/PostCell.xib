@@ -31,7 +31,7 @@
                             <constraint firstAttribute="height" constant="1" id="LwP-lS-IWH"/>
                         </constraints>
                     </view>
-                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nry-al-iDb">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nry-al-iDb">
                         <rect key="frame" x="20" y="38" width="280" height="186.5"/>
                         <gestureRecognizers/>
                         <constraints>
@@ -94,6 +94,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <gestureRecognizers/>
             <connections>
                 <outlet property="autor" destination="tLu-Gl-UB3" id="4hJ-vM-v3v"/>
                 <outlet property="comments" destination="dfe-x7-s9R" id="wbK-JR-RIl"/>

@@ -18,10 +18,12 @@ final class ImageLoader {
     }
     
     func downloadImage(urlString: String, completion: @escaping (UIImage?, Error?) -> Void) {
-        if let image = cache.object(forKey: urlString as NSString) {
+        let urlEncodingString = String(htmlEncodedString: urlString)
+        if let image = cache.object(forKey: urlEncodingString as NSString) {
             completion(image, nil)
-        } else if let url = URL(string: urlString) {
-            URLSession.shared.dataTask(with: url) { (data, _, error) in
+        } else if
+            let url = URL(string: urlEncodingString) {
+            URLSession.shared.dataTask(with: url) { (data, response, error) in
                 DispatchQueue.main.async {
                     if let data = data, let image = UIImage(data: data) {
                         self.cache.setObject(image, forKey: urlString as NSString)
