@@ -25,11 +25,7 @@ class ViewModel: NSObject, ViewModelAbstract {
     // used for successful data received
     var onFetchCompletion: Constant.Block.loadCompletion?
     
-    // start fetch data request
-    func fetchData() {
-        fetchData(force: false)
-    }
-    
+    // start fetch data request    
     func fetchData(force: Bool) {
         
     }

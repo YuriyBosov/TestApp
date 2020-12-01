@@ -18,6 +18,10 @@ class ErrorHandler  {
         case parse = "Не удается распарсить данные, полученные от сервера."
     }
     
+    enum ErrorCode {
+        static let canceled = -999
+    }
+    
     var message: String = ""
     var code: Int = 0
     

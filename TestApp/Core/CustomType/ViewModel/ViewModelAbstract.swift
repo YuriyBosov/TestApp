@@ -15,10 +15,15 @@ protocol ViewModelAbstract {
     var task: URLSessionTask? { get set }
     
     func fetchData()
+    func fetchData(force: Bool)
     func cancelFetchData()
 }
 
 extension ViewModelAbstract {
+    
+    func fetchData() {
+        fetchData(force: false)
+    }
     
     func cancelFetchData() {
         task?.cancel()

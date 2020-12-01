@@ -1,7 +1,69 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--Post List View Controller-->
+        <scene sceneID="8Mj-Kw-q8B">
+            <objects>
+                <viewController storyboardIdentifier="PostListViewController" id="SfG-PI-d4Z" customClass="PostListViewController" customModule="TestApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hxG-Pk-7o6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eRc-1l-mkN">
+                                <rect key="frame" x="0.0" y="91" width="414" height="771"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="SfG-PI-d4Z" id="QO5-pP-nue"/>
+                                    <outlet property="delegate" destination="SfG-PI-d4Z" id="6sJ-UW-lrx"/>
+                                </connections>
+                            </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Po2-OU-jha">
+                                <rect key="frame" x="20" y="52" width="374" height="32"/>
+                                <segments>
+                                    <segment title="Day"/>
+                                    <segment title="Week"/>
+                                    <segment title="Month"/>
+                                    <segment title="Year"/>
+                                    <segment title="All"/>
+                                </segments>
+                                <connections>
+                                    <action selector="periodValueChangedWithSender:" destination="SfG-PI-d4Z" eventType="valueChanged" id="1dD-nB-2H1"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="INF-H2-UD6"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Po2-OU-jha" firstAttribute="leading" secondItem="INF-H2-UD6" secondAttribute="leading" constant="20" id="6p4-sr-rjD"/>
+                            <constraint firstItem="eRc-1l-mkN" firstAttribute="top" secondItem="Po2-OU-jha" secondAttribute="bottom" constant="8" id="7pR-GW-fvx"/>
+                            <constraint firstItem="INF-H2-UD6" firstAttribute="trailing" secondItem="Po2-OU-jha" secondAttribute="trailing" constant="20" id="9Ps-1O-gvV"/>
+                            <constraint firstItem="INF-H2-UD6" firstAttribute="trailing" secondItem="eRc-1l-mkN" secondAttribute="trailing" id="iST-L4-bLF"/>
+                            <constraint firstItem="INF-H2-UD6" firstAttribute="bottom" secondItem="eRc-1l-mkN" secondAttribute="bottom" id="nCC-9s-FOU"/>
+                            <constraint firstItem="eRc-1l-mkN" firstAttribute="leading" secondItem="INF-H2-UD6" secondAttribute="leading" id="yQA-LB-EDD"/>
+                            <constraint firstItem="Po2-OU-jha" firstAttribute="top" secondItem="INF-H2-UD6" secondAttribute="top" constant="8" id="yTG-GE-MZx"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="segmentedControl" destination="Po2-OU-jha" id="MUC-8y-5jd"/>
+                        <outlet property="tableView" destination="eRc-1l-mkN" id="CBL-sO-6w6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n11-pq-b8J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="25" y="61"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

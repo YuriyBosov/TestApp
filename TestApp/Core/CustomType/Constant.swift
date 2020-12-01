@@ -21,9 +21,9 @@ enum Constant {
     }
     
     enum Color {
-        static let defaultBackgroundColor = UIColor(red: 235.0/255.0,
-                                                    green: 235.0/255.0,
-                                                    blue: 235.0/255.0,
+        static let defaultBackgroundColor = UIColor(red: 245.0/255.0,
+                                                    green: 245.0/255.0,
+                                                    blue: 245.0/255.0,
                                                     alpha: 1)
     }
 }

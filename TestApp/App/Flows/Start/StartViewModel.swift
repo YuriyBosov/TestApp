@@ -9,7 +9,7 @@ import Foundation
 
 class StartViewModel: ViewModel {
     
-    override func fetchData() {
+    override func fetchData(force: Bool) {
         onLoadStart?()
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             self.onLoadEnd?(nil)

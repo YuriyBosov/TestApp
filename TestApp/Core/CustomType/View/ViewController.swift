@@ -32,6 +32,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = Constant.Color.defaultBackgroundColor
+        
+        if self != navigationController?.viewControllers.first && self.navigationItem.leftBarButtonItem == nil {
+            self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "backButton"), style: .plain, target: self, action: #selector(backButtonTapped))
+        }
     }
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
@@ -40,6 +44,11 @@ class ViewController: UIViewController {
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .default
+    }
+ 
+    //MARK: - Actions
+    @IBAction func backButtonTapped() {
+        self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func hideKeyboard() {

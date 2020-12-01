@@ -11,8 +11,8 @@ class PostCoordinator: BaseCoordinator {
     
     override func start(with option: [String : AnyObject]? = nil) {
         let viewModel = PostListViewModel()
-        let controller = PostListViewController()
-        controller.viewModel = viewModel
+        let controller = PostListViewController.instantiateFromStoryboard(storyboardName: "Post")
+        controller?.viewModel = viewModel
         self.router.setRootModule(controller)
     }
 }

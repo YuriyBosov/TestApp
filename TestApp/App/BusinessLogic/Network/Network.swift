@@ -24,20 +24,27 @@ final class Network {
                                failure: Constant.Block.error?) {
         if let data = responseData {
             #if DEBUG
-            if let json = try? JSONSerialization.jsonObject(with: data, options: []) {
+//            if let json = try? JSONSerialization.jsonObject(with: data, options: []) {
                 print("================================================")
-                print("Response Success:\n\(json)")
-            }
+                print("Response Success")
+//                print("\(json)")
+//            }
             #endif
-            success?(data)
+            DispatchQueue.main.async {
+                success?(data)
+            }
         } else if let error = responseError {
             #if DEBUG
             print("================================================")
             print("Response Error:\n\(error)")
             #endif
-            failure?(ErrorHandler(error))
+            DispatchQueue.main.async {
+                failure?(ErrorHandler(error))
+            }
         } else {
-            failure?(ErrorHandler(.default))
+            DispatchQueue.main.async {
+                failure?(ErrorHandler(.default))
+            }
         }
     }
     
