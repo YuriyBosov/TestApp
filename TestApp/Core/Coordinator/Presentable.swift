@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVKit
 
 protocol Presentable: class {
     func toPresent() -> UIViewController
@@ -37,6 +38,12 @@ extension UIAlertController: Presentable {
 }
 
 extension UIActivityViewController: Presentable {
+    func toPresent() -> UIViewController {
+        return self
+    }
+}
+
+extension AVPlayerViewController: Presentable {
     func toPresent() -> UIViewController {
         return self
     }

@@ -31,6 +31,11 @@
 		E767708F2575A3230077AC8D /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = E767708E2575A3230077AC8D /* Network.swift */; };
 		E76770952575A4B10077AC8D /* Network+Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76770942575A4B10077AC8D /* Network+Config.swift */; };
 		E7A9A92D25766ABF00CFFC12 /* ViewModelPaginationAbstract.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A9A92C25766ABF00CFFC12 /* ViewModelPaginationAbstract.swift */; };
+		E7A9A9302576838600CFFC12 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A9A92F2576838600CFFC12 /* Image.swift */; };
+		E7A9A9332576840700CFFC12 /* Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A9A9322576840700CFFC12 /* Preview.swift */; };
+		E7A9A93625768A3300CFFC12 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A9A93525768A3300CFFC12 /* Video.swift */; };
+		E7A9A93D257690D600CFFC12 /* PostCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A9A93C257690D600CFFC12 /* PostCellViewModel.swift */; };
+		E7A9A94125769A9600CFFC12 /* PostActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A9A94025769A9600CFFC12 /* PostActions.swift */; };
 		E7D0C60A2575055C00D5F2B6 /* UIStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D0C6092575055C00D5F2B6 /* UIStoryboard.swift */; };
 		E7D0C60D2575090B00D5F2B6 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D0C60C2575090B00D5F2B6 /* UIViewController.swift */; };
 		E7D0C61025750D7E00D5F2B6 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7D0C60F25750D7E00D5F2B6 /* Auth.storyboard */; };
@@ -96,6 +101,11 @@
 		E767708E2575A3230077AC8D /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		E76770942575A4B10077AC8D /* Network+Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Network+Config.swift"; sourceTree = "<group>"; };
 		E7A9A92C25766ABF00CFFC12 /* ViewModelPaginationAbstract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelPaginationAbstract.swift; sourceTree = "<group>"; };
+		E7A9A92F2576838600CFFC12 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		E7A9A9322576840700CFFC12 /* Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preview.swift; sourceTree = "<group>"; };
+		E7A9A93525768A3300CFFC12 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
+		E7A9A93C257690D600CFFC12 /* PostCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCellViewModel.swift; sourceTree = "<group>"; };
+		E7A9A94025769A9600CFFC12 /* PostActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostActions.swift; sourceTree = "<group>"; };
 		E7D0C6092575055C00D5F2B6 /* UIStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryboard.swift; sourceTree = "<group>"; };
 		E7D0C60C2575090B00D5F2B6 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		E7D0C60F25750D7E00D5F2B6 /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
@@ -171,6 +181,7 @@
 		E755F51A25756CF700D8A03F /* Post */ = {
 			isa = PBXGroup;
 			children = (
+				E7A9A94025769A9600CFFC12 /* PostActions.swift */,
 				E7E9C2832575E2F500EB0E8A /* Cells */,
 				E755F54925756ED200D8A03F /* PostDetailed */,
 				E755F54825756EC500D8A03F /* PostList */,
@@ -309,6 +320,7 @@
 		E7E9C2832575E2F500EB0E8A /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				E7A9A93C257690D600CFFC12 /* PostCellViewModel.swift */,
 				E7E9C2892575E33600EB0E8A /* PostCell.swift */,
 				E7E9C28A2575E33600EB0E8A /* PostCell.xib */,
 			);
@@ -365,8 +377,11 @@
 		E7F69197257275BC00821B6D /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				E7F691D025727B3800821B6D /* Post.swift */,
 				E7F691CD25727B2D00821B6D /* PostResponse.swift */,
+				E7F691D025727B3800821B6D /* Post.swift */,
+				E7A9A92F2576838600CFFC12 /* Image.swift */,
+				E7A9A9322576840700CFFC12 /* Preview.swift */,
+				E7A9A93525768A3300CFFC12 /* Video.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -575,6 +590,7 @@
 			files = (
 				E755F5642575799B00D8A03F /* LoginViewModel.swift in Sources */,
 				E755F56E257593FF00D8A03F /* ImageLoader.swift in Sources */,
+				E7A9A9332576840700CFFC12 /* Preview.swift in Sources */,
 				E7D0C64725753F6500D5F2B6 /* HUDView.swift in Sources */,
 				E755F52425756E1D00D8A03F /* SettingViewModel.swift in Sources */,
 				E755F54625756EAB00D8A03F /* PostCoordinator.swift in Sources */,
@@ -587,6 +603,7 @@
 				E7D0C62525750F3B00D5F2B6 /* RegistrationViewController.swift in Sources */,
 				E7D0C61C25750EE200D5F2B6 /* StartViewController.swift in Sources */,
 				E767708F2575A3230077AC8D /* Network.swift in Sources */,
+				E7A9A94125769A9600CFFC12 /* PostActions.swift in Sources */,
 				E755F55F2575798E00D8A03F /* RegistrationViewModel.swift in Sources */,
 				E7D0C64D2575456900D5F2B6 /* StartCoordinator.swift in Sources */,
 				E755F54E25756EF000D8A03F /* PostListViewController.swift in Sources */,
@@ -608,10 +625,12 @@
 				E755F53025756E4900D8A03F /* MessagesViewModel.swift in Sources */,
 				E7E9C27A2575D7AF00EB0E8A /* Network+Posts.swift in Sources */,
 				E755F52D25756E4100D8A03F /* MessagesCoordinator.swift in Sources */,
+				E7A9A93D257690D600CFFC12 /* PostCellViewModel.swift in Sources */,
 				E7D0C63C257526B500D5F2B6 /* ErrorHandler.swift in Sources */,
 				E7A9A92D25766ABF00CFFC12 /* ViewModelPaginationAbstract.swift in Sources */,
 				E7E9C2802575E1EF00EB0E8A /* LoadMoreCell.swift in Sources */,
 				E7F691CA25727AFD00821B6D /* NavigationController.swift in Sources */,
+				E7A9A93625768A3300CFFC12 /* Video.swift in Sources */,
 				E755F54025756E8200D8A03F /* UsersCoordinator.swift in Sources */,
 				E755F53625756E6200D8A03F /* UsersViewModel.swift in Sources */,
 				E7F691842572745300821B6D /* ViewController.swift in Sources */,
@@ -628,6 +647,7 @@
 				E7F691EA2572972300821B6D /* BaseCoordinator.swift in Sources */,
 				E7F691E0257290BE00821B6D /* Presentable.swift in Sources */,
 				E7D0C60A2575055C00D5F2B6 /* UIStoryboard.swift in Sources */,
+				E7A9A9302576838600CFFC12 /* Image.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

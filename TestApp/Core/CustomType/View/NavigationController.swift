@@ -18,6 +18,7 @@ class NavigationController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .systemYellow
+        self.interactivePopGestureRecognizer?.delegate = self
     }
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
@@ -28,3 +29,15 @@ class NavigationController: UINavigationController {
         return topViewController?.preferredStatusBarStyle ?? .default
     }
 }
+
+extension NavigationController: UIGestureRecognizerDelegate {
+    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+        if gestureRecognizer == interactivePopGestureRecognizer &&
+            self.viewControllers.count == 1 {
+            return false
+        } else {
+            return true
+        }
+    }
+}
+

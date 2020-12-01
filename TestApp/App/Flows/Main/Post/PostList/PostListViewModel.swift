@@ -7,9 +7,14 @@
 
 import UIKit
 
-class PostListViewModel: ViewModel, ViewModelPaginationAbstract {
+class PostListViewModel: ViewModel, ViewModelPaginationAbstract, PostActions {
     
-    var items = [Post]()
+    var onSelectPost: ((Post) -> ())?
+    var onSelectTnumbnail: ((Post, Image) -> ())?
+    var onPlayVideo: ((Post, Video) -> ())?
+    
+    
+    var items = [PostCellViewModel]()
     var periodType: Post.PeriodType = .day {
         didSet {
             items.removeAll()
@@ -36,7 +41,7 @@ class PostListViewModel: ViewModel, ViewModelPaginationAbstract {
             self.onLoadStart?()
         }
         
-        task = Network.topPost(afterMarker: afterMarker, periodType: periodType, success: { (data) in
+        task = Network.topPost(afterMarker: afterMarker, periodType: periodType, limit: 10, success: { (data) in
             self.task = nil
             do {
                 let response = try JSONDecoder().decode(PostResponse.self, from: data)
@@ -44,7 +49,23 @@ class PostListViewModel: ViewModel, ViewModelPaginationAbstract {
                     self.items.removeAll()
                 }
                 self.afterMarker = response.after
-                self.items.append(contentsOf: response.posts)
+                
+                // Model -> CellViewModel
+                let viewModels = response.posts.map { (post) -> PostCellViewModel in
+                    let viewModel = PostCellViewModel(post: post)
+                    viewModel.onSelectPost = { [weak self] selectedPost in
+                        self?.onSelectPost?(selectedPost)
+                    }
+                    viewModel.onSelectTnumbnail = { [weak self] selectedPost, image in
+                        self?.onSelectTnumbnail?(selectedPost, image)
+                    }
+                    viewModel.onPlayVideo = { [weak self] selectedPost, video in
+                        self?.onPlayVideo?(selectedPost, video)
+                    }
+                    return viewModel
+                }
+                
+                self.items.append(contentsOf: viewModels)
                 self.onLoadEnd?(nil)
                 self.onFetchCompletion?(self.items)
                 

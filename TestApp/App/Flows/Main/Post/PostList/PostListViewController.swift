@@ -98,7 +98,7 @@ extension PostListViewController: UITableViewDataSource {
         if let viewModel = viewModel, indexPath.row < viewModel.items.count {
             cell = tableView.dequeueReusableCell(withIdentifier: PostCell.className, for: indexPath)
             if let cell = cell as? PostCell {
-                cell.post = viewModel.items[indexPath.row]
+                viewModel.items[indexPath.row].setupCell(cell)
             }
         } else {
             cell = tableView.dequeueReusableCell(withIdentifier: LoadMoreCell.className, for: indexPath)
@@ -113,6 +113,14 @@ extension PostListViewController: UITableViewDataSource {
 
 //MARK: - UITableViewDelegate
 extension PostListViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        if let viewModel = viewModel, indexPath.row < viewModel.items.count {
+            viewModel.items[indexPath.row].didSelectPost()
+        }
+        
+    }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if cell is LoadMoreCell {

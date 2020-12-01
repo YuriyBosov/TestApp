@@ -9,14 +9,22 @@ import UIKit
 
 class PostCell: UITableViewCell {
 
-    var post: Post? {
-        didSet {
-            
-        }
+    var onPlayButtonTapped: (()->())?
+    var onThumbnailTapped: (()->())?
+     
+    @IBOutlet var thumbnail: UIImageView?
+    @IBOutlet var title: UILabel?
+    @IBOutlet var autor: UILabel?
+    @IBOutlet var date: UILabel?
+    @IBOutlet var comments: UILabel?
+    @IBOutlet var playButton: UIButton?
+    
+    @IBAction private func playButtonTapped() {
+        onPlayButtonTapped?()
     }
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-//        self.backgroundColor = Constant.Color.defaultBackgroundColor
+    @IBAction private func thumbnailTapped() {
+        onThumbnailTapped?()
     }
+    
 }
