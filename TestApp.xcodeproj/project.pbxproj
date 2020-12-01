@@ -37,6 +37,9 @@
 		E7A9A93D257690D600CFFC12 /* PostCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A9A93C257690D600CFFC12 /* PostCellViewModel.swift */; };
 		E7A9A94125769A9600CFFC12 /* PostActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A9A94025769A9600CFFC12 /* PostActions.swift */; };
 		E7A9A9452576ADC700CFFC12 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A9A9442576ADC700CFFC12 /* String.swift */; };
+		E7A9A9492576B04400CFFC12 /* ImageViewerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A9A9482576B04400CFFC12 /* ImageViewerCoordinator.swift */; };
+		E7A9A94D2576B05100CFFC12 /* ImageViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A9A94C2576B05100CFFC12 /* ImageViewerViewController.swift */; };
+		E7A9A9502576B05C00CFFC12 /* ImageViewerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A9A94F2576B05C00CFFC12 /* ImageViewerViewModel.swift */; };
 		E7D0C60A2575055C00D5F2B6 /* UIStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D0C6092575055C00D5F2B6 /* UIStoryboard.swift */; };
 		E7D0C60D2575090B00D5F2B6 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D0C60C2575090B00D5F2B6 /* UIViewController.swift */; };
 		E7D0C61025750D7E00D5F2B6 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7D0C60F25750D7E00D5F2B6 /* Auth.storyboard */; };
@@ -108,6 +111,9 @@
 		E7A9A93C257690D600CFFC12 /* PostCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCellViewModel.swift; sourceTree = "<group>"; };
 		E7A9A94025769A9600CFFC12 /* PostActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostActions.swift; sourceTree = "<group>"; };
 		E7A9A9442576ADC700CFFC12 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		E7A9A9482576B04400CFFC12 /* ImageViewerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewerCoordinator.swift; sourceTree = "<group>"; };
+		E7A9A94C2576B05100CFFC12 /* ImageViewerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewerViewController.swift; sourceTree = "<group>"; };
+		E7A9A94F2576B05C00CFFC12 /* ImageViewerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewerViewModel.swift; sourceTree = "<group>"; };
 		E7D0C6092575055C00D5F2B6 /* UIStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryboard.swift; sourceTree = "<group>"; };
 		E7D0C60C2575090B00D5F2B6 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		E7D0C60F25750D7E00D5F2B6 /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
@@ -249,6 +255,16 @@
 				E755F5712575941F00D8A03F /* UIImageView+ImageLoader.swift */,
 			);
 			path = ImageLoader;
+			sourceTree = "<group>";
+		};
+		E7A9A9472576B00F00CFFC12 /* ImageViewer */ = {
+			isa = PBXGroup;
+			children = (
+				E7A9A94F2576B05C00CFFC12 /* ImageViewerViewModel.swift */,
+				E7A9A94C2576B05100CFFC12 /* ImageViewerViewController.swift */,
+				E7A9A9482576B04400CFFC12 /* ImageViewerCoordinator.swift */,
+			);
+			path = ImageViewer;
 			sourceTree = "<group>";
 		};
 		E7D0C607257503C200D5F2B6 /* Start */ = {
@@ -420,6 +436,7 @@
 		E7F691BA257276C100821B6D /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				E7A9A9472576B00F00CFFC12 /* ImageViewer */,
 				E7E9C27C2575E1BD00EB0E8A /* Common */,
 				E7D0C608257503E200D5F2B6 /* Auth */,
 				E7D0C607257503C200D5F2B6 /* Start */,
@@ -593,6 +610,7 @@
 			files = (
 				E755F5642575799B00D8A03F /* LoginViewModel.swift in Sources */,
 				E755F56E257593FF00D8A03F /* ImageLoader.swift in Sources */,
+				E7A9A94D2576B05100CFFC12 /* ImageViewerViewController.swift in Sources */,
 				E7A9A9332576840700CFFC12 /* Preview.swift in Sources */,
 				E7D0C64725753F6500D5F2B6 /* HUDView.swift in Sources */,
 				E755F52425756E1D00D8A03F /* SettingViewModel.swift in Sources */,
@@ -611,6 +629,8 @@
 				E7D0C64D2575456900D5F2B6 /* StartCoordinator.swift in Sources */,
 				E755F54E25756EF000D8A03F /* PostListViewController.swift in Sources */,
 				E755F52125756E0D00D8A03F /* SettingCoordinator.swift in Sources */,
+				E7A9A9492576B04400CFFC12 /* ImageViewerCoordinator.swift in Sources */,
+				E7A9A9502576B05C00CFFC12 /* ImageViewerViewModel.swift in Sources */,
 				E7D0C62F2575100500D5F2B6 /* MainCoordinator.swift in Sources */,
 				E76770952575A4B10077AC8D /* Network+Config.swift in Sources */,
 				E7F691EE2572D07E00821B6D /* AppCoordinator.swift in Sources */,
