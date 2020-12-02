@@ -9,7 +9,7 @@ import UIKit
 
 class HUDView: UIView {
     
-    private var activityIndicator = UIActivityIndicatorView(style: .whiteLarge)
+    private var activityIndicator = UIActivityIndicatorView(style: .large)
     private var textLabel = UILabel()
     
     private static let tag = 1111

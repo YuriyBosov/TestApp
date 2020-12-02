@@ -15,6 +15,12 @@ class PostCellViewModel: PostActions {
     var onSelectTnumbnail: ((Post, Image)->())?
     var onPlayVideo: ((Post, Video)->())?
     
+    private static let dateTimeFormatter: RelativeDateTimeFormatter = {
+        let formatter = RelativeDateTimeFormatter()
+        formatter.unitsStyle = .full
+        return formatter
+    }()
+    
     init(post: Post) {
         self.post = post
     }
@@ -63,7 +69,6 @@ class PostCellViewModel: PostActions {
     }
     
     private func setupCreateDate(for label: UILabel?) {
-        label?.text = post.created.description
+        label?.text = PostCellViewModel.dateTimeFormatter.localizedString(for: post.created, relativeTo: Date())
     }
-
 }
