@@ -51,7 +51,15 @@ class PostCellViewModel: PostActions {
     }
     
     private func setupCommentCount(for label: UILabel?) {
-        label?.text = "\(post.numComments)"
+        if post.numComments == 0 {
+            label?.text = "No Comment"
+        } else if post.numComments == 1 {
+            label?.text = "1 Comment"
+        } else if post.numComments < 1000 {
+            label?.text = "\(post.numComments) Comments"
+        } else {
+            label?.text = String(format: "%0.1fk Comments", (Float(post.numComments)/1000.0))
+        }
     }
     
     private func setupCreateDate(for label: UILabel?) {
