@@ -28,11 +28,13 @@ final class Router: NSObject {
     //MARK: - Present|Dismiss
     func present(_ module: Presentable?, animated: Bool, completion: (() -> Void)?) {
         guard let controller = module?.toPresent() else { return }
-        rootController.present(controller, animated: animated, completion: completion)
+        let root = rootController.presentedViewController ?? rootController
+        root.present(controller, animated: animated, completion: completion)
     }
     
     func dismiss(animated: Bool, completion: (() -> Void)?) {
-        rootController.dismiss(animated: animated, completion: completion)
+        let root = rootController.presentedViewController ?? rootController
+        root.dismiss(animated: animated, completion: completion)
     }
     
     //MARK: - Set Root

@@ -10,7 +10,7 @@ import UIKit
 class ImageViewerViewController: ViewController {
     
     var onDoneButtonClicked: (()->())?
-    var onShareButtonClicked: ((UIImage)->())?
+    var onShareButtonClicked: ((UIImage, UIBarButtonItem?)->())?
     
     var viewModel: ImageViewerViewModel? {
         didSet {
@@ -43,6 +43,8 @@ class ImageViewerViewController: ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .darkGray
+        self.navigationController?.navigationBar.tintColor = .white
+        self.navigationController?.navigationBar.barTintColor = .darkGray
         
         self.view.addSubview(imageView)
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -73,7 +75,7 @@ class ImageViewerViewController: ViewController {
     
     @objc private func shareButtonTapped() {
         if let image = image {
-            onShareButtonClicked?(image)
+            onShareButtonClicked?(image, shareButton)
         }
     }
 }

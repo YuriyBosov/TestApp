@@ -25,14 +25,19 @@ class ImageViewerCoordinator: Coordinator {
                 self?.onFinishFlow?(self)
             })
         }
-        controller.onShareButtonClicked = { [weak self] image in
-            self?.showImageShareController(image)
-        }        
-        self.router.setRootModule(controller)
+        controller.onShareButtonClicked = { [weak self] image, button in
+            self?.showImageShareController(image, shareButton: button)
+        }
+        let navigationController = NavigationController(rootViewController: controller)
+        navigationController.modalPresentationStyle = .fullScreen
+        self.router.present(navigationController, animated: true, completion: nil)
     }
     
-    private func showImageShareController(_ image: UIImage) {
+    private func showImageShareController(_ image: UIImage, shareButton: UIBarButtonItem? = nil) {
         let controller = UIActivityViewController(activityItems: [image], applicationActivities: nil)
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            controller.popoverPresentationController?.barButtonItem = shareButton
+        }
         self.router.present(controller, animated: true, completion: nil)
     }
 }

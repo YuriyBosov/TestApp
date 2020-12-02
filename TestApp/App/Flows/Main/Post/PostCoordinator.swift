@@ -36,14 +36,13 @@ class PostCoordinator: BaseCoordinator {
     }
     
     private func showPostTnumbnail(_ post: Post, image: Image) {
-        let coordinator = ImageViewerCoordinator(router: Router(rootController: UINavigationController()),
+        let coordinator = ImageViewerCoordinator(router: self.router,
                                                  imageUrl: image.url)
         self.addDependency(coordinator)
         coordinator.onFinishFlow = { [weak self] coordinator in
             self?.removeDependency(coordinator)
         }
         coordinator.start()
-        self.router.present(coordinator.router, animated: true, completion: nil)
     }
     
     private func playVideo(_ post: Post, video: Video) {
